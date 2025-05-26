@@ -1,0 +1,7 @@
+{
+  "name": "evaluacion1-menuapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
