@@ -1,0 +1,144 @@
+/* ################################### 
+Proyecto: Tarea de Evaluación 1 y 2.
+Desarrollador: Luis F. Mujica
+Fecha: Mayo 2025
+Fecha Act.: 14-Junio-2025
+Nombre del código: menu-princiapl.component.scss
+Versión: 1.0.0 (Tarea de Evaluación 1)
+Versión: 1.1.0 (Tarea de Evaluación 2)
+
+Descripción: Este código permite definir los estilos visuales de los elementos dde la barra del menu principal.
+#####################################
+*/
+
+/* Estilos de CSS para el menú principal */
+
+/* Estilos para la barra de herramientas - ion-toolbar. */
+ion-toolbar {
+  --background: var(--ion-color-primary);
+  --color: white;
+  position: relative; // Añadido para jerarquía z-index
+  z-index: 999; // Menor que el menú
+}
+
+/* Estilos para el menú hamburguesa - PRIORITARIO */
+.custom-menu {
+  --width: 280px;
+  z-index: 1001;
+  position: absolute;
+
+  ion-content {
+    --background: var(--ion-color-light);
+    z-index: 1002;
+  }
+}
+
+/* Fondo oscuro cuando el menú está abierto */
+ion-menu::part(backdrop) {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Contenedor del menú */
+ion-menu::part(container) {
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.18);
+  z-index: 1002;
+  position: relative;
+}
+
+/* Estilos para los botones - ion-button. */
+ion-button {
+  --color: white;
+  --background-hover: rgba(243, 241, 241, 0.1);
+  font-weight: 500;
+  margin: 0 4px;
+
+  &.active {
+    --color: var(--ion-color-warning);
+    font-weight: bold;
+  }
+}
+
+/* Ajuste de la Media query para pantallas con un ancho máximo de 768px. */
+@media (max-width: 768px) {
+  ion-button {
+    font-size: 0.8rem;
+    margin: 0 2px;
+  }
+}
+
+/* Ocultar menú superior en móviles */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+}
+
+/* Ocultar botón hamburguesa en desktop */
+@media (min-width: 769px) {
+  ion-menu-button {
+    display: none;
+  }
+}
+
+/* Estilo para enlace activo */
+.active {
+  --ion-color-base: var(--ion-color-light) !important;
+  font-weight: bold;
+}
+
+/* Estilos para el menú hamburguesa */
+.custom-menu {
+  --width: 280px;
+  z-index: 1001;
+
+  ion-content {
+    --background: var(--ion-color-light);
+  }
+}
+
+/* Fondo oscuro cuando el menú está abierto */
+ion-menu::part(backdrop) {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Contenedor del menú */
+ion-menu::part(container) {
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.18);
+}
+
+/* Menú desktop - siempre visible en pantallas grandes */
+.desktop-menu {
+  display: flex;
+}
+
+/* Menú mobile - solo botón hamburguesa */
+ion-menu-button {
+  display: block;
+}
+
+/* Responsividad */
+@media (min-width: 769px) {
+  ion-menu-button {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+}
+
+/* Estilo para enlace activo */
+.active {
+  color: var(--ion-color-light);
+  font-weight: bold;
+  border-bottom: 2px solid var(--ion-color-light);
+}

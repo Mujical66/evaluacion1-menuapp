@@ -1,0 +1,66 @@
+<!-- ################################### 
+Proyecto: Tarea de Evaluación 1 y 2.
+Desarrollador: Luis F. Mujica
+Fecha: Mayo 2025
+Fecha ultima actualización: 13-Junio-2025
+Nombre del código: page-inf-personal.page.html 
+Versión: 1.0.0 (Tarea de Evaluación 1)
+Versión: 1.1.0 (Tarea de Evaluación 2)
+Descripción: Archivo principal para visualizar la pantalla de la información personal.
+##################################### -->
+
+<!-- Visualización del Menú principal declarado como componente general para 
+ ser utilizado de forma general y unificado -->
+<app-menu-principal></app-menu-principal>
+
+<!-- Definición de una clase para las caracteristicas del fonod de pantalla -->
+<div class="page-background"></div>
+
+<!-- Contenido principal con ID que coincide con el contentId del menú -->
+<ion-content class="personal-info-content" id="main-content">
+  <!-- Barra de título -->
+  <ion-toolbar>
+    <ion-title>Información Personal</ion-title>
+  </ion-toolbar>
+
+  <!-- Se le incorporó al formulario la sección de: Encabezado visual con imagen y título para mejorar la visualización -->
+  <div class="info-header" style="text-align: center; margin-top: 20px">
+    <img
+      src="assets/img/inf_personal.png"
+      alt="Información Personal"
+      style="width: 120px; height: auto; margin-bottom: 15px"
+    />
+    <div style="font-size: 25px; font-weight: bold; color: #04284e">
+      Información Personal
+    </div>
+  </div>
+
+  <!-- Espacio bajo el menú -->
+  <div style="height: 20px"></div>
+
+  <!-- Contenedor de información -->
+  <div class="info-container">
+    <ion-list lines="full" class="info-list">
+      <ion-item>
+        <ion-label>Nombre y Apellido: Luis Mujica</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Cédula de Identidad: V-7090613</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label
+          >Unidad Curricular: Programación III (M2) - Informática</ion-label
+        >
+      </ion-item>
+      <ion-item>
+        <ion-label>Profesor: Ing. Carlos Márquez</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Sección: S4ABy5AB-2025/1</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Fecha: Junio-2025</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

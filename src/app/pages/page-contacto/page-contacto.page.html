@@ -1,0 +1,131 @@
+<!-- ################################### 
+Proyecto: Tarea de Evaluación 1 y 2.
+Desarrollador: Luis F. Mujica
+Fecha: Mayo 2025
+Fecha de ultima actualización: 13-Junio-2025
+Nombre del código: page-contacto.page.html
+Versión: 1.0.0 (Tarea de Evaluación 1)
+Actualización de la Versión: 1.1.0 (Tarea de la Evalución 2) 
+Descripción: Esta es la página de Contacto.
+#####################################-->
+
+<!-- Llamado del componente de menú principal, aparece en la parte superior de la pantalla -->
+
+<app-menu-principal></app-menu-principal>
+
+<!-- Fondo adaptable al tema -->
+<div class="page-background"></div>
+
+<!-- Contenador principal del formulario -->
+<ion-content id="main-content">
+  <ion-header>
+    <!-- Titulo del Encabezado del Formulario -->
+    <ion-toolbar>
+      <ion-title>Contáctanos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Contenedor principal del Card donde se agrupa la información y los campos del formulario -->
+  <ion-card class="form-container">
+    <ion-card-content>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <!-- Campo Nombre y Apellido con sus Validaciones -->
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="person" slot="start"></ion-icon>
+            Nombre y Apellido
+          </ion-label>
+          <ion-input formControlName="nombre" type="text"></ion-input>
+        </ion-item>
+        <ion-text
+          *ngIf="contactForm.get('nombre')?.errors?.['required'] && contactForm.get('nombre')?.touched"
+          color="danger"
+          class="error-message"
+        >
+          <ion-icon name="warning" slot="start"></ion-icon>
+          El nombre es obligatorio
+        </ion-text>
+
+        <!-- Campo Email con las caracteristicas de las validaciones -->
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="mail" slot="start"></ion-icon>
+            Email
+          </ion-label>
+          <ion-input formControlName="email" type="email"></ion-input>
+        </ion-item>
+        <ion-text
+          *ngIf="contactForm.get('email')?.errors?.['required'] && contactForm.get('email')?.touched"
+          color="danger"
+          class="error-message"
+        >
+          <ion-icon name="warning" slot="start"></ion-icon>
+          El email es obligatorio
+        </ion-text>
+        <ion-text
+          *ngIf="contactForm.get('email')?.errors?.['email'] && contactForm.get('email')?.touched"
+          color="danger"
+          class="error-message"
+        >
+          <ion-icon name="warning" slot="start"></ion-icon>
+          Ingrese un email válido
+        </ion-text>
+
+        <!-- Campo Asunto y las validaciones -->
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="document-text" slot="start"></ion-icon>
+            Asunto
+          </ion-label>
+          <ion-input formControlName="asunto" type="text"></ion-input>
+        </ion-item>
+        <ion-text
+          *ngIf="contactForm.get('asunto')?.errors?.['required'] && contactForm.get('asunto')?.touched"
+          color="danger"
+          class="error-message"
+        >
+          <ion-icon name="warning" slot="start"></ion-icon>
+          El asunto es obligatorio
+        </ion-text>
+
+        <!-- Campo Mensaje con sus validaciones  -->
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="chatbubble-ellipses" slot="start"></ion-icon>
+            Mensaje
+          </ion-label>
+          <ion-textarea formControlName="mensaje" rows="5"></ion-textarea>
+        </ion-item>
+        <ion-text
+          *ngIf="contactForm.get('mensaje')?.errors?.['required'] && contactForm.get('mensaje')?.touched"
+          color="danger"
+          class="error-message"
+        >
+          <ion-icon name="warning" slot="start"></ion-icon>
+          El mensaje es obligatorio
+        </ion-text>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Contenedor de Botones -->
+  <div class="buttons-container">
+    <!-- Botón de Enviar y sus caracteristicas -->
+    <ion-button
+      class="custom-button"
+      expand="block"
+      color="success"
+      (click)="onSubmit()"
+      [disabled]="!contactForm.valid"
+    >
+      <ion-icon name="send" slot="start"></ion-icon>
+      Enviar
+    </ion-button>
+
+    <!-- Botón de Pagina Inicio y sus caracteristicas -->
+    <ion-button class="custom-button" expand="block" routerLink="/tabs/inicio">
+      <ion-icon name="home" slot="start"></ion-icon>
+      Página Inicio
+    </ion-button>
+  </div>
+</ion-content>

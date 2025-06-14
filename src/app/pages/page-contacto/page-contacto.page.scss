@@ -1,0 +1,134 @@
+/* ################################### 
+Proyecto: Tarea de Evaluación 1 y 2.
+Desarrollador: Luis F. Mujica
+Fecha: Mayo 2025
+Fecha Act.: 14-Junio-2025
+Nombre del código: page-contacto.page.scss
+Versión: 1.0.0 (Tarea de Evaluación 1)
+Versión: 1.1.0 (Tarea de Evaluación 2)
+Descripción: Este código permite definir los estilos visuales de los elementos de la página de Contacto.
+#####################################
+*/
+
+/* Estilos CSS de los titulos del contenedor */
+.contact-title {
+  color: blue;
+  font-size: 32px;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* Estilos para el formulario de contacto */
+ion-card {
+  margin: 50px;
+}
+
+/* Estilos para el color del boton de enviar */
+ion-button[color="success"] {
+  --background: #2e7d32; /* Color: Verde oscuro */
+}
+
+/* Estilos para el color del boton de Página Inicio */
+ion-button {
+  --background: #1a237e;
+  --color: white;
+}
+
+/* Estilos para el contenedor de botones y los botones personalizados */
+.buttons-container {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  justify-content: center;
+
+  .custom-button {
+    --padding-start: 24px;
+    --padding-end: 24px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+    width: auto;
+    min-width: 120px;
+    white-space: nowrap;
+
+    /* Estilo para el botón de éxito */
+    &.button-success {
+      --background: var(--ion-color-success);
+      --color: white;
+    }
+
+    /* Estilo para el botón normal */
+    &:not(.button-success) {
+      --background: var(--ion-color-primary);
+      --color: white;
+    }
+  }
+}
+
+/* Diseño del Fondo adaptable */
+.page-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ion-color-step-50);
+  z-index: -1;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  margin: 16px;
+  border-radius: 12px;
+  background: var(--ion-color-step-100);
+  box-shadow: 0 4px 8px rgba(var(--ion-color-dark-rgb), 0.1);
+
+  ion-item {
+    --background: var(--ion-color-step-100);
+    --border-color: var(--ion-color-step-200);
+    margin-bottom: 8px;
+  }
+
+  ion-label {
+    color: var(--ion-text-color);
+  }
+}
+
+/* Diseño de Mensaje de error */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  margin-top: -12px;
+  margin-bottom: 12px;
+  padding-left: 16px;
+  color: var(--ion-color-danger);
+
+  ion-icon {
+    font-size: 1rem;
+  }
+}
+
+/* Diseño para las caracteristicas del Contenedor de botones */
+.buttons-container {
+  padding: 16px;
+  margin-top: 16px;
+
+  ion-button {
+    margin-bottom: 12px;
+    --background-activated: var(--ion-color-step-300);
+  }
+}
+
+/* Estilos para íconos */
+ion-icon {
+  color: var(--ion-color-primary);
+  font-size: 1.2rem;
+}
+
+/* Campos inválidos */
+ion-item.invalid {
+  --highlight-color-invalid: var(--ion-color-danger);
+  --border-color: var(--ion-color-danger);
+}

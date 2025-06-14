@@ -1,0 +1,90 @@
+<!-- ################################### 
+Proyecto: Tarea de Evaluación 1 y 2.
+Desarrollador: Luis F. Mujica
+Fecha: Mayo 2025
+Fecha Act.: 14-Junio-2025
+Fecha ultima actualización: 13-06-2025
+Nombre del código: menu-principal.component.html
+Versión: 1.0.0 (Tarea de Evaluación 1)
+Versión: 1.1.0 (Tarea de Evaluación 2)
+Descripción: Creación del archivo que funciona como un compoenete del Menu principal, 
+el cual permite de una forma simplificada poder usarlo en cualquier parte que se requiera .
+#####################################-->
+
+<!-- Creación del Menú Hamburguesa -->
+<ion-menu
+  contentId="main-content"
+  side="start"
+  menuId="main-menu"
+  class="custom-menu"
+>
+  <ion-header>
+    <!-- Titulo del Menu de Hamburguesa -->
+    <ion-toolbar color="primary">
+      <ion-title>Menú UNETI</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!-- Caracteristicas del botón de Inicio -->
+      <ion-item button routerLink="/tabs/inicio" (click)="closeMenu()">
+        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+
+      <!-- Caracteristicas del botón de Información Personal -->
+      <ion-item
+        button
+        routerLink="/tabs/informacion-personal"
+        (click)="closeMenu()"
+      >
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-label>Información Personal</ion-label>
+      </ion-item>
+
+      <!-- Caracteristicas del botón de Contacto -->
+      <ion-item button routerLink="/tabs/contacto" (click)="closeMenu()">
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-label>Contacto</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Menu de la Barra Superior -->
+<div id="main-content">
+  <!-- Area y caracteristicas del menu de la Barra Superior -->
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+      <ion-img
+        src="assets/icon/logo_uneti.png"
+        alt="Logo UNETI"
+        style="height: 40px; margin: 5px"
+      ></ion-img>
+    </ion-buttons>
+    <ion-buttons slot="end" class="desktop-menu">
+      <ion-button
+        fill="clear"
+        routerLink="/tabs/inicio"
+        [class.active]="isActive('/tabs/inicio')"
+      >
+        Inicio
+      </ion-button>
+      <ion-button
+        fill="clear"
+        routerLink="/tabs/informacion-personal"
+        [class.active]="isActive('/tabs/informacion-personal')"
+      >
+        Información Personal
+      </ion-button>
+      <ion-button
+        fill="clear"
+        routerLink="/tabs/contacto"
+        [class.active]="isActive('/tabs/contacto')"
+      >
+        Contacto
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</div>

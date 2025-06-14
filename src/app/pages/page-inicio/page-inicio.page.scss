@@ -1,0 +1,145 @@
+/* ################################### 
+Proyecto: Tarea de Evaluación 1 y 2.
+Desarrollador: Luis F. Mujica
+Fecha: Mayo 2025
+Fecha Act.: 13-Junio-2025
+Nombre del código: page-inicio.page.scss
+Versión: 1.0.0 (Tarea de Evaluación 1)
+Versión: 1.1.0 (Tarea de Evaluación 2)
+Descripción: Este código permite definir los estilos visuales de los elementos de la página principal o de Inicio.
+#####################################
+*/
+
+/* Estilo del Contenedor principal de la página */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh; /* Ajusta la altura para dejar espacio para los botones */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+/* Estilo del Titulo de "Bienvenida" */
+.title-main {
+  color: blue; /* Color de la fuente o letra del titulo */
+  font-size: 70px; /* Tamaño aumentado a 50px */
+  margin-top: 100px; /* Margen superior representado en pixeles */
+}
+
+/* Redefine y Ocupa todo el espacio disponible en el contenedor, lo utilice para simular el saldo de pagina <br> en el área con el nombre de .space  */
+.spacer {
+  flex: 1;
+}
+
+/* Estilo del Titulo de "Tarea Evaluación 1" */
+.subtitle-1 {
+  color: black;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* Estilo del Titulo de "Aplicación creada con Ionic ....." */
+.subtitle-2 {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Ubicación de la imagen que se muestra como fondo de pantallas para el contenedor */
+
+ion-content {
+  --background: url("/assets/img/fondo_ionic.png") no-repeat center center /
+    cover;
+}
+
+/* Estilo de los botones del menú superior "INICIO - INFORMACIÓN PERSONAL - CONTACTO" */
+ion-toolbar ion-button {
+  --color: var(--ion-color-primary);
+  --background-hover: rgba(var(--ion-color-primary-rgb), 0.1);
+  margin: 0 5px;
+  font-weight: 500;
+}
+
+/* Caracteristicas resposive para que el menú se colapse en móviles */
+@media (max-width: 768px) {
+  ion-toolbar ion-button {
+    font-size: 0.8rem;
+    margin: 0 2px;
+  }
+}
+
+/* Área de Estilos que se aplican a los botones del contenedor */
+.buttons-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Diseño de los botones como: ancho para ambos botones y Bordes redondeados */
+.menu-button {
+  width: 180px;
+  --border-radius: 8px;
+}
+
+/* Estructura principal del contenedor */
+ion-content {
+  --background: transparent;
+  position: relative;
+}
+
+/* Area para el diseño del Fondo como capa base y el Contenido sobre el fondo */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Area de ajustes para el contenido y Fondo semitransparente para mejor legibilidad */
+.content-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.title-main {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle-1,
+.subtitle-2 {
+  color: white;
+  margin: 0.5rem 0;
+}
+
+.spacer {
+  height: 2rem;
+}
